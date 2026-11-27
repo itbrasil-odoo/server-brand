@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Hide the "Powered by Odoo" link in the login footer -->
+    <template id="login_debranding_hide_powered_by" inherit_id="web.login_layout">
+        <xpath
+            expr="//a[contains(@href, 'odoo.com') and contains(@href, 'utm_medium=auth')]"
+            position="attributes"
+        >
+            <attribute name="t-if">False</attribute>
+        </xpath>
+        <!-- Without the link, the database manager needs no separator, and the
+             footer has nothing to show when the manager is disabled. -->
+        <xpath expr="//a[@href='/web/database/manager']" position="attributes">
+            <attribute name="class" remove="border-end pe-2 me-1" separator=" " />
+        </xpath>
+        <xpath
+            expr="//div[hasclass('border-top')][@t-if='not disable_footer']"
+            position="attributes"
+        >
+            <attribute
+                name="t-if"
+            >not disable_footer and not disable_database_manager</attribute>
+        </xpath>
+    </template>
+</odoo>
