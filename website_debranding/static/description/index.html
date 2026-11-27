@@ -395,8 +395,13 @@ ul.auto-toc {
 <div class="section" id="usage">
 <h2><a class="toc-backref" href="#toc-entry-1">Usage</a></h2>
 <p>By default the option is enabled, so no additional configuration is
-needed. You can always control the visibility in Website &gt; Customize &gt;
-Brand Promotion &gt; Remove Odoo Promotional Link</p>
+needed. To show the Odoo promotional link again, go to Settings &gt;
+Technical &gt; User Interface &gt; Views (developer mode), search for <em>Remove
+Odoo Promotional Link</em> and archive it; unarchive it to hide the link
+again.</p>
+<p>When the module is installed with tests enabled (<tt class="docutils literal"><span class="pre">--test-enable</span></tt>), the
+view is installed archived so that other modules’ tests see the standard
+footer; unarchive it on such databases.</p>
 </div>
 <div class="section" id="bug-tracker">
 <h2><a class="toc-backref" href="#toc-entry-2">Bug Tracker</a></h2>
